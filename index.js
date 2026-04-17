@@ -21,7 +21,8 @@ const home=require('./routes/home');
 const signup=require('./routes/signup');
 const auth=require('./routes/auth');
 const UserModel = require('./model/user.model');
-mongoose.connect('mongodb://localhost:27017/crypto', {
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/crypto';
+mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
@@ -162,6 +163,7 @@ BlockStash Team`
 });
 
 
-app.listen(3000,()=>{
-    console.log("Server is running on port 3000");
-}   )
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
