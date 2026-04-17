@@ -1,0 +1,116 @@
+html,body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background: #000;
+    
+}
+ .dropbox{
+  
+     position: fixed;
+     top: 10%;
+     right: 25%;
+     left: 40%;
+     width: max-content;
+     background-color:#161717;
+     ;
+     color: white;
+     padding: 20px;
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     z-index: 1000;
+    }
+    .dropbox h1{
+      font-family: 'syne', sans-serif;
+      font-weight: 600;
+      font-size: 30px;
+      color: white;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+    .dropbox h1 span{
+      color: red;
+
+    }
+    .dropbox form{
+      display: flex;
+      flex-direction:column ;
+      justify-content: center;
+      align-items: center;
+    }
+    .dropbox form .inputs{
+      display: flex;
+      flex-direction: column;
+      
+      text-align: left;
+    }
+    .dropbox form label{
+      font-family: 'Barlow', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: white;
+      margin-bottom: 5px;
+    }
+    .dropbox form input{
+      width: 400px;
+    }
+    .dropbox form input[type="email"]{  
+      border: 1px solid #ccc;
+      width: 200px;
+      height: 30px;
+      border-radius: 5px;
+      padding-left: 10px;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      background:none;
+      color: white;
+      outline: none;
+    }
+    .dropbox form input[type="password"]{  
+      border: 1px solid #ccc;
+      width: 200px;
+      height: 30px;
+      border-radius: 5px;
+      padding-left: 10px;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      background:none;
+      color: white;
+      outline: none;
+    }
+    .dropbox form button{
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: white;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      background: rgb(105, 105, 246);
+      padding: 10px 20px;
+      border-radius: 15px;
+    }
+    .dropbox form button:hover{
+      background-color: rgb(85, 85, 246);
+      transition: background-color 0.3s ease;
+    }
+    .dropbox form p{
+      
+      font-family: 'Barlow', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: white;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .dropbox form p a{
+      text-decoration:underline;
+      color: silver;
+    }

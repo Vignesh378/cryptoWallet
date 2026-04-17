@@ -1,0 +1,975 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: max-content;
+   overflow-inline: hidden;
+}
+
+
+.header{
+ position: fixed;
+    background-color: black;
+    
+    top: 0;
+    left: 21%;
+    padding: 10px 10px;
+    width: 100%;
+    z-index: 1000;
+    
+    }
+    .header .top{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+
+    width: 78%;
+    
+    height: max-content;
+    
+    }
+    .header .top .title{
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    }
+    .header .top .sub-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    gap: 30px;}
+    .sub-title .search{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #ccc;
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    
+    }
+    .sub-title .search i{
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    }
+    .sub-title .search input{
+    
+    border: none;
+    padding-left: 10px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    background:none;
+    color: white;
+    outline: none;
+    }
+    .search button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    
+    .search button:hover {
+    color: #ccc;
+    }
+    .sub-title .notification{
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    }
+    
+    .suggestions {
+    position:absolute;
+    margin-top: 240px;
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    }
+    
+    .suggestions div {
+    padding: 10px;
+    cursor: pointer;
+    }
+    
+    .suggestions div:hover {
+    background-color: #0f1923;
+    }
+    .account-link{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      
+    }
+    .account-link>a {
+    text-decoration: none;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    padding: 10px 20px;
+    background-color: rgb(105, 105, 246);
+    border-radius: 15px;
+    
+    }
+    .account-link a:hover {
+    background-color: rgb(85, 85, 246);
+    transition: background-color 0.3s ease;
+    }
+    .hidden {
+      display: none;
+  }
+   .dropbox{
+  
+     position: fixed;
+     top: 10%;
+     right: 0%;
+     background-color:#161717;
+     ;
+     color: white;
+     padding: 20px;
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     z-index: 1000;
+    }
+    .dropbox h1{
+      font-family: 'syne', sans-serif;
+      font-weight: 600;
+      font-size: 30px;
+      color: white;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+    .dropbox h1 span{
+      color: red;
+
+    }
+    .dropbox form{
+      display: flex;
+      flex-direction:column ;
+      justify-content: center;
+      align-items: center;
+    }
+    .dropbox form .inputs{
+      display: flex;
+      flex-direction: column;
+      
+      text-align: left;
+    }
+    .dropbox form label{
+      font-family: 'Barlow', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: white;
+      margin-bottom: 5px;
+    }
+    .dropbox form input{
+      width: 400px;
+    }
+    .dropbox form input[type="email"]{  
+      border: 1px solid #ccc;
+      width: 200px;
+      height: 30px;
+      border-radius: 5px;
+      padding-left: 10px;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      background:none;
+      color: white;
+      outline: none;
+    }
+    .dropbox form input[type="password"]{  
+      border: 1px solid #ccc;
+      width: 200px;
+      height: 30px;
+      border-radius: 5px;
+      padding-left: 10px;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      background:none;
+      color: white;
+      outline: none;
+    }
+    .dropbox form button{
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: white;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      background: rgb(105, 105, 246);
+      padding: 10px 20px;
+      border-radius: 15px;
+    }
+    .dropbox form button:hover{
+      background-color: rgb(85, 85, 246);
+      transition: background-color 0.3s ease;
+    }
+    .dropbox form p{
+      
+      font-family: 'Barlow', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: white;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .dropbox form p a{
+      text-decoration:underline;
+      color: silver;
+    }
+    .header .options{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        font-family: 'Barlow', sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        color: white;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 75%;
+        margin-left: 30px;
+
+    }
+    .header .options .choose>a{
+        text-decoration: none;
+        color: white;
+
+    }
+    
+    .header .options #on a{
+        color: rgb(105, 105, 246);
+    
+    }
+    .options #on {
+        color: rgb(105, 105, 246); /* Highlight color for the active option */
+        border-bottom: 2px solid rgb(105, 105, 246); /* Add a small line below the active option */
+        padding-bottom: 5px; /* Add spacing between the text and the line */
+    }
+   .main-container{
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    padding-left: 40px;
+    width: 75vw; /* Full viewport width */
+    min-height: 100vh;
+    max-height: 100%;
+    z-index: 700;
+    display: flex;
+    flex-direction: row;
+   margin-bottom: 50px;
+
+        
+    }
+    .main-container .nft-container{
+      position: absolute;
+
+        display:flex;
+        flex-direction:column;
+
+        height: 100%;
+        width: 100%;
+
+    }
+   .nft-container.hidden{
+    display: none;
+   }
+    .main-container .nft-container .trending{
+      width: 100%;
+  
+    
+        mask-image: linear-gradient( 
+            to right,
+            transparent,
+            #000 10% 90%,
+            transparent
+        );
+       
+    }
+    .main-container .trending  .nft-cards{
+       
+    
+        display: flex;
+        width: 100%; /* Ensure it fits within the parent container */
+        height: var(--height);
+        min-width: calc(var(--width)*var(--quantity));
+        position: relative;
+       
+      
+    }
+    .main-container .trending .nft-card{
+        display: flex;
+        flex-direction: column;
+       justify-content: center;
+   
+       border-radius: 15px;
+       padding: 10px 0px;
+
+        background: #1e1e1e;
+        width: var(--width);
+        height: var(--height);
+        position: absolute;
+      left: 100%;
+       animation: autoRun 10s linear infinite;
+        animation-delay:calc((10s/var(--quantity))*var(--position));
+   
+
+    }
+   .main-container .trending h1{
+    font-family: 'syne', sans-serif;
+    font-weight: 600;
+    color: white;
+    font-size: 30px;
+   }
+    .main-container .trending .nft-cards .nft-card .nft-image{
+        display: flex; /* Enable Flexbox */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        width: 100%;
+       
+    
+    }
+    .main-container .trending .nft-cards .nft-image img{
+    
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+        background-color: #bbbec0;
+     
+    }
+    
+    @keyframes autoRun{
+        from{
+          left:100%;
+        }
+        to{
+          left:calc(var(--width)*-1)
+        }
+      }
+      .main-container .trending :hover .nft-card{
+        animation-play-state:paused!important;
+      }
+    .main-container .trending .nft-card .nft-info {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        color: white;
+        display:block;
+        text-align: center;
+    }
+    .main-container .trending .nft-card .nft-info p {
+        white-space: normal; /* Allow text to wrap */
+        word-wrap: break-word; /* Break long words */
+        overflow-wrap: break-word; /* Ensure text breaks at appropriate points */
+        
+        text-align: center; /* Center-align the text */
+    }
+
+    /* --------------------growth-nfts------------------------- */
+    .main-container .nft-container .growth-potential{
+        width: 100%;
+  
+    
+        mask-image: linear-gradient( 
+            to right,
+            transparent,
+            #000 10% 90%,
+            transparent
+        );
+       
+      }
+      .main-container .growth-potential  .nft-cards{
+          display: flex;
+          width: 100%; /* Ensure it fits within the parent container */
+          height: var(--height);
+          min-width: calc(var(--width)*var(--quantity));
+          position: relative;
+        
+      }
+      .main-container .growth-potential .nft-card{
+          display: flex;
+          flex-direction: column;
+         justify-content: center;
+     
+         border-radius: 15px;
+         padding: 10px 0px;
+  
+          background: #1e1e1e;
+          width: var(--width);
+          height: var(--height);
+          position: absolute;
+        left: 100%;
+         animation: autoRun 10s linear infinite;
+          animation-delay:calc((10s/var(--quantity))*var(--position));
+     
+  
+      }
+     .main-container .growth-potential h1{
+      font-family: 'syne', sans-serif;
+      font-weight: 600;
+      color: white;
+      font-size: 30px;
+     }
+      .main-container .growth-potential .nft-cards .nft-card .nft-image{
+          display: flex; /* Enable Flexbox */
+          justify-content: center; /* Center horizontally */
+          align-items: center; /* Center vertically */
+          width: 100%;
+         
+      }
+      .main-container .growth-potential .nft-cards .nft-image img{
+      
+          width: 120px;
+          height: 120px;
+          border-radius: 10px;
+          background-color: #bbbec0;
+       
+      }
+      
+    
+        .main-container .growth-potential :hover .nft-card{
+          animation-play-state:paused!important;
+        }
+      .main-container .growth-potential .nft-card .nft-info{
+        font-family: 'Barlow', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        color: white;
+        display:block;
+        text-align: center;
+      }
+      .main-container .growth-potential .nft-card .nft-info p {
+        white-space: normal; /* Allow text to wrap */
+        word-wrap: break-word; /* Break long words */
+        overflow-wrap: break-word; /* Ensure text breaks at appropriate points */
+        
+        text-align: center; /* Center-align the text */
+      }
+    
+      /* -------------------------------collectables------------------------- */
+       .main-container .nft-container .growth-potential{
+        width: 100%;
+  
+    
+        mask-image: linear-gradient( 
+            to right,
+            transparent,
+            #000 10% 90%,
+            transparent
+        );
+       
+      }
+      .main-container .growth-potential  .nft-cards{
+          display: flex;
+          width: 100%; /* Ensure it fits within the parent container */
+          height: var(--height);
+          min-width: calc(var(--width)*var(--quantity));
+          position: relative;
+        
+      }
+      .main-container .growth-potential .nft-card{
+          display: flex;
+          flex-direction: column;
+         justify-content: center;
+     
+         border-radius: 15px;
+         padding: 10px 0px;
+  
+          background: #1e1e1e;
+          width: var(--width);
+          height: var(--height);
+          position: absolute;
+        left: 100%;
+         animation: autoRun 10s linear infinite;
+          animation-delay:calc((10s/var(--quantity))*var(--position));
+     
+  
+      }
+     .main-container .growth-potential h1{
+      font-family: 'syne', sans-serif;
+      font-weight: 600;
+      color: white;
+      font-size: 30px;
+     }
+      .main-container .growth-potential .nft-cards .nft-card .nft-image{
+          display: flex; /* Enable Flexbox */
+          justify-content: center; /* Center horizontally */
+          align-items: center; /* Center vertically */
+          width: 100%;
+         
+      }
+      .main-container .growth-potential .nft-cards .nft-image img{
+      
+          width: 120px;
+          height: 120px;
+          border-radius: 10px;
+          background-color: #bbbec0;
+       
+      }
+      
+    
+        .main-container .growth-potential :hover .nft-card{
+          animation-play-state:paused!important;
+        }
+      .main-container .growth-potential .nft-card .nft-info{
+        font-family: 'Barlow', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        color: white;
+        display:block;
+        text-align: center;
+      }
+      .main-container .growth-potential .nft-card .nft-info p {
+        white-space: normal; /* Allow text to wrap */
+        word-wrap: break-word; /* Break long words */
+        overflow-wrap: break-word; /* Ensure text breaks at appropriate points */
+        
+        text-align: center; /* Center-align the text */
+      }
+    
+      .main-container .nft-container .collectables{
+        width: 100%;
+  
+    
+        mask-image: linear-gradient( 
+            to right,
+            transparent,
+            #000 10% 90%,
+            transparent
+        );
+       
+      }
+      .main-container .collectables  .nft-cards{
+          display: flex;
+          width: 100%; /* Ensure it fits within the parent container */
+          height: var(--height);
+          min-width: calc(var(--width)*var(--quantity));
+          position: relative;
+        
+      }
+      .main-container .collectables .nft-card{
+          display: flex;
+          flex-direction: column;
+         justify-content: center;
+     
+         border-radius: 15px;
+         padding: 10px 0px;
+  
+          background: #1e1e1e;
+          width: var(--width);
+          height: var(--height);
+          position: absolute;
+        left: 100%;
+         animation: autoRun 10s linear infinite;
+          animation-delay:calc((10s/var(--quantity))*var(--position));
+     
+  
+      }
+     .main-container .collectables h1{
+      font-family: 'syne', sans-serif;
+      font-weight: 600;
+      color: white;
+      font-size: 30px;
+     }
+      .main-container .collectables .nft-cards .nft-card .nft-image{
+          display: flex; /* Enable Flexbox */
+          justify-content: center; /* Center horizontally */
+          align-items: center; /* Center vertically */
+          width: 100%;
+         
+      }
+      .main-container .collectables .nft-cards .nft-image img{
+      
+          width: 120px;
+          height: 120px;
+          border-radius: 10px;
+          background-color: #bbbec0;
+       
+      }
+      
+    
+        .main-container .collectables :hover .nft-card{
+          animation-play-state:paused!important;
+        }
+      .main-container .collectables .nft-card .nft-info{
+        font-family: 'Barlow', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        color: white;
+        display:block;
+        text-align: center;
+      }
+      .main-container .collectables .nft-card .nft-info p {
+        white-space: normal; /* Allow text to wrap */
+        word-wrap: break-word; /* Break long words */
+        overflow-wrap: break-word; /* Ensure text breaks at appropriate points */
+        
+        text-align: center; /* Center-align the text */
+      }
+    /* -------------------------------nft-brokers-------------------------  */
+      .main-container .nft-container .brokers{
+       
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: space-evenly;
+        
+      
+
+      }
+      .brokers h1{
+        font-family:'syne', sans-serif;
+        font-weight: 500;
+        color: white;
+        font-size: 20px;
+      }
+      .brokers a{
+        text-decoration: none;
+      
+      }
+      .brokers .nfts-b{
+        width:100%;
+        
+        display: flex;
+        flex-direction: row;
+        gap:20px;
+        justify-content: center;
+      }
+      .brokers .nfts-b .b{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        width:max-content;
+        background: #161717;
+        padding: 0px 15px;
+      border-radius: 15px;
+
+
+      }
+      .brokers .nfts-b .b .logo{
+       display: flex;
+       flex-direction: row;
+    
+        align-items: center;
+       gap: 10px;
+       font-family: 'Barlow', sans-serif;
+       font-weight: 500;
+       font-size: 16px;
+       color: white;
+      }
+      .brokers .nfts-b p{
+        font-family: 'Barlow', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        color: white;
+      }
+      /* -----------------------------gamining-container---------------------------- */
+     .main-container .games-container{
+      position: absolute;
+      margin-top: 50px;
+      z-index: 700;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      width: 100%;
+     }
+    .games-container.hidden{
+      display: none;
+    }
+     .games-container .row1{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+     }
+     .games-container .row1 .game{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+      font-family: 'Barlow', sans-serif;
+      font-weight: 500;
+       width: 300px;
+       height: 300px;
+      color: white;
+      text-align: center;
+      background: #161717;
+      padding-top: 10px;
+      border-radius:15px ;
+     }
+     .game h1{
+      font-family: 'Barlow', sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      color: white;
+     }
+     .game p{
+      font-weight: 400;
+      font-size:16px;
+     }
+     .game img{
+      width:200px;
+      height: 200px;
+      border-radius: 25px;
+     }
+
+     .games-container .info{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      font-family: 'syne', sans-serif;
+      font-weight: 500;
+      color: white;
+     }
+     .games-container .info h1{
+      
+      font-size: 30px;
+     }
+     .games-container .info a{
+      display: flex;
+      flex-direction:row ;
+      gap: 20px;
+      align-items: center;
+      width: max-content;
+      text-decoration: none;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: black;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 25px;
+     }
+     .info a i{
+      background: #000;
+      color: white;
+      padding: 10px 20px;
+   border-radius: 20px;
+     }
+     .games-container .info a:hover{
+      background-color: rgb(85, 85, 246);
+    transition: background-color 0.3s ease;
+     }
+   
+     /* ---------------------------------token-container----------------------------- */
+     .token-container{
+      position: relative;
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      width: 100%;
+     }
+   
+     .token-container .ticker{
+      position:fixed ;
+      top: 18%;
+      width: 100%;
+      background: #000;
+      padding: 10px 10px;
+    z-index: 1100;
+     
+     }
+     .token-container .top-part{
+      display: flex;
+      flex-direction: row; /* Arrange children horizontally */
+      justify-content: space-evenly; /* Distribute space evenly */
+      gap: 30px; /* Add spacing between children */
+      margin-bottom: 20px; /* Add spacing below .top-part */
+      margin-top: 70px;
+     
+
+     }
+     .token-container .top-part .total-balance{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 500px;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      background: #161717;
+      padding: 20px 10px;
+      border-radius:15px ;
+      text-align: left;
+      padding-left: 20px;
+     }
+     .total-balance h2{
+      display:flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      font-size: 20px;
+     }
+     .total-balance h2 i{
+      font-size: 24px;
+      color: rgb(105, 105, 246);
+     }
+
+     .total-balance p{   
+      display: flex;
+      gap: 20px;
+      color: white;
+      font-size: 25px;
+      font-weight: 500;}
+
+     .token-container .top-part .changes-24{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 500px;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      background: #161717;
+      padding: 20px 10px;
+      border-radius:15px ;
+      text-align: left;
+      padding-left: 20px;
+     }
+
+     .changes-24 h2{
+      display:flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      font-size: 20px;
+     }
+     .changes-24 h2 i{
+      font-size: 24px;
+      color: rgb(105, 105, 246);
+     }
+
+     .changes-24 p{
+      display: flex;
+      gap: 20px;
+      color:red;
+      font-size: 25px;
+      font-weight: 500;
+     }
+   .token-container .lower-part{
+    display: flex;
+    flex-direction:column ;
+    justify-content: center; /* Center-align the widget */
+    gap: 40px;
+    align-items: center; /* Center-align vertically */
+    width: 100%; /* Ensure it takes the full width */
+    height: 100vh;
+    margin-top: 20px; /* Add spacing above the widget */
+
+   }
+   .lower-part .watchlist{
+    display: flex;
+    flex-direction: column;
+    
+   width: 100%;
+    color: white;
+   
+    height: 600px;
+    padding: 20px 20px;
+
+   }
+   .lower-part .watchlist h1{
+    text-align: left;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    color: white;
+    font-size: 30px;
+   }
+   
+   .lower-part .watchlist .search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 800;
+   }
+  .lower-part .watchlist .search .search-btn{
+    position: relative;
+    top: 20%;
+  
+    display: flex;
+    flex-direction:row ;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+ 
+    border: 1px solid #ccc;
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+
+  }
+  .search input{
+    border: none;
+    padding-left: 10px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    background:none;
+    color: white;
+    outline: none;
+
+  }
+  .search button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    
+    .search button:hover {
+    color: #ccc;
+    }
+  .lower-part .watchlist p{
+    position: relative;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+
+    text-align: center;
+  }
+
+ 

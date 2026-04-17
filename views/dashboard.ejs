@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Slabo+27px&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  
+<link rel="stylesheet" href="../style/accounts.css">
+
+<link rel="stylesheet" href="../style/dashboard.css">
+<link rel="stylesheet" href="../style/discover.css">
+<!-- <link rel="stylesheet" href="../style/move.css"> -->
+
+</head>
+<body>
+    <div class="container">
+        <div class="leftslidemenu">
+           <div class="menu-content">
+            <div class="logo">
+            <h1>Block <br><span>Stash</span></h1>    
+            </div>
+            <div class="links">
+                <a href="/dashboard" class="dashboard active">
+                    <i class="fa-solid fa-table-columns"></i>Dashboard
+                </a>
+             
+                <a href="/discover" class="discover ">
+                    <i class="fa-solid fa-compass"></i>Discover
+                </a>
+                  
+            </div>
+           </div>
+        </div>
+        <div class="right-container">
+          <div class="right-container">
+<div class="header">
+    <div class="top">
+        <div class="title">
+            <h1>Dashboard</h1> <!-- Dynamically render the title -->
+        </div>
+        <div class="sub-title">
+            <div class="sub-title">
+                <div class="search">
+                    <button id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="text" id="search-input" placeholder="Search for a coin">
+                  
+                </div>
+                <div id="suggestions" class="suggestions"></div> <!-- Suggestions container -->
+            </div>
+            <div class="notification">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+           <div class="account-logo ">
+            <img src="../images/MetaMask_Fox.svg.png" alt="account-image" style="width: 30px; height: 30px; border-radius:10px ;">
+          
+         </div>
+        </div>
+      
+    </div>
+    <div class="bottom">
+        <div class="btn buy"><a href="#buy"> <i class="fa-solid fa-angle-down"></i>Buy</a>
+       </div>
+       <div class="buy-drop">
+        <div class="brockers"><a href="https://www.coinbase.com/en-in/explore"><img src="../images/coinbase-removebg-preview.png" alt="">CoinBase</a></div>
+        <div class="brockers"><a href="https://www.binance.com/en/crypto/buy/USD/1000CAT"><img src="../images/binance-removebg-preview.png" alt="">Binance
+        </a></div>
+        <div class="brockers"><a href="https://www.bybit.com/en/"><img src="../images/bybit-removebg-preview.png" alt="">bybit</a></div>
+    </div>
+       
+        <div class="btn "><a href="../send.html">Send</a></div>
+    </div>
+</div>
+
+<div class="right-main">
+   <div class="mainleft">
+    <div class="add-accounts">
+        <div class="add-logo">
+            <i class="fa-solid fa-circle-plus"></i>
+        </div>
+         <div class="showaccounts">
+            <i class="fa-solid fa-wallet"></i>
+            <i class="fa-solid fa-angle-down"></i>
+         </div>
+         <div class="show-account ">
+            <img src="../images/MetaMask_Fox.svg.png" alt="account-image" style="width: 30px; height: 30px; border-radius:10px ;">
+          
+         </div>
+    </div>
+    <div class="account-brokers">
+       <a href="#Binance"><img src="../images/binance-removebg-preview.png" alt="" style="width:40px; height: 40px;"></a>
+       <a href="#coinbase"><img src="../images/coinbase-removebg-preview.png" alt=""  style="width:40px; height: 40px;"></a>
+   </div>
+   </div>
+   <div class="mainright">
+    <div class="top-part">
+        <h1>Decentralized accounts</h1>
+        <div class="amount">
+            <div class="indollars">
+                <h2>$0.00</h2>
+               
+            </div>
+            <div class="inpercent">
+                <p>$0.00(0.00%)</p>
+            </div>
+        </div>
+      <div class="options">
+        <div class="option " id="on"><a href="">Tokens</a></div>
+        <div class="option"><a href="">Nfts</a></div>
+        <div class="option"><a href="">Transactions</a></div>
+      </div>
+
+    </div>
+    <div class="bottom-part">
+        <div class="token-section respons">
+            <i class="fa-solid fa-leaf"></i>
+            <p>No Tokens to Show</p>
+            <a href="#binance">Token Marketplace</a>
+        </div>
+        <div class="nft-section respons">
+            <i class="fa-solid fa-leaf"></i>
+            <p>No NFTs<br><span>Don't see an NFT?</span></p>
+            <a href="#binance">Refresh</a>
+        </div>
+        <div class="transaction-section respons">
+            <i class="fa-solid fa-leaf"></i>
+            <p>No Transactions</p>
+            <a href="#binance">Refresh</a>
+        </div>
+    </div>
+   </div>
+     <div class="hover-accountinfo hidden">
+                <div class="blockstash">
+                   <h1>Block <br><span>Stash</span></h1>
+                </div>
+               <div class="qrcode">
+    <img src="<%= qrCode%>" alt="Wallet QR Code">
+</div>
+<div class="account-addresss">
+    <p>Wallet Address: <%=walletAddress %></p>
+</div>
+            </div>
+</div>
+</div>
+          </div> 
+          </div>
+    
+  
+
+  
+   
+    <script>
+ 
+          
+  
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const hoverAccountInfo = document.querySelector('.hover-accountinfo');
+    const showAccountBtn = document.querySelector('.show-account');
+
+    // Show hover-accountinfo when show-account is clicked
+    showAccountBtn.addEventListener('click', (event) => {
+        event.stopPropagation(); // Prevent the click from bubbling up
+        hoverAccountInfo.classList.remove('hidden');
+    });
+
+    // Hide hover-accountinfo when clicking outside of it
+    document.addEventListener('click', (event) => {
+        if (
+            !hoverAccountInfo.contains(event.target) &&
+            !showAccountBtn.contains(event.target)
+        ) {
+            hoverAccountInfo.classList.add('hidden');
+        }
+    });
+});
+
+
+    </script>
+     <script src="../script/account.js"></script>
+</body>
+</html>

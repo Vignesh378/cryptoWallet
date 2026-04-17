@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Slabo+27px&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="./style/signup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="video-background">
+            <video autoplay loop muted playsinline>
+              <source src="./Screen Recording 2025-03-21 173326.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="signup-container">
+            <h1>Block <br> <span> Stash</span></h1>
+            <form action="/signup " method="post">
+                <div class="username">
+                    <label for="username">UserName</label>
+                    <input type="text" id="username" name="username" placeholder="Username" autocomplete="username" required>
+                </div>
+                <div class="Email">  <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your Email"  autocomplete="email"  required>
+                </div>
+              
+                <!-- Password Field -->
+                 <div class="password">
+                    <label for="password">Password</label>
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" placeholder="Password"  autocomplete="new-password" required>
+                        <i class="fa fa-eye toggle-password" id="toggle-password"></i>
+                    </div>
+                 </div>
+                
+                
+                <!-- Confirm Password Field -->
+                 <div class="confirm-password">
+                    <label for="password">Confirm Password</label>
+                    <div class="password-container">
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" autocomplete="new-password" required>
+                        <i class="fa fa-eye toggle-password" id="toggle-confirm-password"></i>
+                    </div>
+                 </div>
+                
+                
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const signupForm = document.querySelector('form'); // Select the form
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirm-password');
+    const togglePassword = document.getElementById('toggle-password');
+    const toggleConfirmPassword = document.getElementById('toggle-confirm-password');
+
+    // Toggle visibility for the password field
+    togglePassword.addEventListener('click', () => {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        togglePassword.classList.toggle('fa-eye');
+        togglePassword.classList.toggle('fa-eye-slash');
+    });
+
+    // Toggle visibility for the confirm password field
+    toggleConfirmPassword.addEventListener('click', () => {
+        const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        confirmPasswordInput.setAttribute('type', type);
+        toggleConfirmPassword.classList.toggle('fa-eye');
+        toggleConfirmPassword.classList.toggle('fa-eye-slash');
+    });
+
+   signupForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Validate passwords
+    if (passwordInput.value !== confirmPasswordInput.value) {
+        alert('Passwords do not match. Please try again.');
+        return;
+    }
+
+    // Create the data object from form inputs
+    const data = {
+        username: signupForm.username.value,
+        email: signupForm.email.value,
+        password: signupForm.password.value,
+    };
+localStorage.setItem('email',data.email);
+console.log(localStorage.getItem('email'));
+    // Send the data to the backend
+fetch('/signup', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+})
+    .then((response) => response.json())
+     .then(data => {
+    if (data.redirect) {
+      window.location.href = data.redirect;
+    }
+  })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+})
+
+});
+
+
+
+    </script>
+</body>
+</html>

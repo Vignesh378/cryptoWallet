@@ -1,0 +1,1095 @@
+@import url('https://fonts.googleapis.com/css2?family=Circular+Std:wght@700&display=swap');
+
+
+    
+
+/* Reset default margins and padding */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+body{
+  background: #000;
+}
+
+/* Ensure sections take up full width and height */
+section {
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.content {
+  position: relative; /* Keeps the content above the video */
+  z-index: 1; /* Higher than the video */
+  color: white; /* Ensures readability over the video */
+  text-align: center;
+  padding: 50px;
+}
+
+header {
+ 
+  padding: 0px 0;
+  margin: 0px;
+  width: 100%;
+  position: fixed; /* Make the header fixed */
+  top: 0; /* Position it at the top of the viewport */
+  z-index: 1000; /* Make sure it stays on top */  
+  animation: navanima linear;
+  animation-timeline: scroll();
+  
+}
+nav {
+display: grid;
+grid-template-columns: 1fr 3fr 1fr;
+align-items: center;
+ max-width: 95%;
+  margin: 0 auto;
+  padding: 0 20px;
+ color: rgb(255, 255, 255);
+
+ 
+}
+.logo a {
+  font-family: 'Circular Std', sans-serif;
+  font-weight: 700;
+
+  margin: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+}
+.logo a span{
+  color: red;
+}
+.nav-links {
+  padding-right: 0px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.nav-links ul li {
+  margin: 0;
+  
+}
+.nav-links  li>a{
+  text-decoration: none;
+  font-size:16px ;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+}
+
+.nav-links li a:hover{
+  color:rgb(51, 51, 196);
+  transition: 0.3s;
+  cursor: pointer;
+}
+.create-btn {
+  position: relative; /* Allows positioning of pseudo-elements */
+  display: inline-block;
+ 
+  overflow: hidden; /* Ensures content doesn't overflow the button */
+
+
+}
+
+.create-btn a {
+  font-size: 20px;
+ 
+  font-family: "Afacad Flux", serif;
+  font-weight: 600;
+  
+ 
+   
+  text-decoration: none;
+  color:black;
+  align-items: center;
+  position: relative;
+ display: inline-block;
+
+  
+
+  background-color: white;
+  border-radius: 25px;
+ align-content: center;
+ padding: 10px 30px;
+
+  transition: transform 0.3s ease; /* Smooth transition for movement */
+  position: relative;
+  z-index: 1; /* Keeps the anchor tag above the pseudo-element */
+  
+}
+.create-btn a:hover{
+  background: rgb(51, 51, 196);
+  color:white;
+  transition: 0.5s;
+}
+
+
+
+.video-background {
+  position: relative; /* Ensures the video is scoped to this section */
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Full viewport height for the section */
+  overflow: hidden; 
+  z-index: -1; /* Places the video behind the content */
+  transform-origin: bottom;
+  animation: bg-imageanime linear forwards;
+  animation-timeline: view();
+  animation-range: exit;
+}
+
+video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover; 
+
+  /* Ensures the video covers the section */
+}
+.main-container{
+  width: 100%;
+  height: 100vh;
+  color: white;
+  margin: 0;
+ 
+}
+
+.main-text{
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  
+  translate: (-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  animation: fade-out linear ;
+  animation-timeline: view();
+  animation-range: 600px;
+}
+
+
+.main-text h1 {
+  position: relative;
+  top: 35%;
+
+  color: white;
+  
+
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  /* font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal; */
+  font-size: 50px;
+  text-align: center; /* Centers the text */
+   /* Adjusts spacing between the lines */
+}
+
+.main-text h1 .line1 {
+  display: block; /* Ensures the first line is on top */
+  margin-bottom: 10px; /* Adds space below the first line */
+}
+
+.main-text h1 .line2 {
+  display: block; /* Ensures the second line is below the first */
+  font-size: 55px; /* Optional: Adjust font size for the second line */
+}
+
+.main-items{
+  position: absolute;
+  top: 50%;
+  left: 15%;
+
+  translate: (-50%, -50%);
+  display: flex;
+  gap: 50px;
+  justify-content: space-evenly;
+  align-items: center;
+  animation: fade-out linear;
+  animation-timeline: view();
+  animation-range: 600px;
+}
+.item-content{
+ 
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+}
+.item-content p{
+
+  color: white;
+  font-family: "Afacad Flux", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  font-weight: 400;
+  font-size: 20px;
+  visibility: visible;
+  opacity: 1;
+}
+.join-btn{
+  margin:10px 50px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color:black;
+  padding: 8px 30px;
+  gap:15px;
+  border-radius: 25px;
+    width: fit-content; /* Allow the button to expand */
+ 
+
+  font-family: "Afacad Flux", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  font-weight: 400;
+  /* animation: fade-out linear;
+  animation-timeline: view();
+  animation-range: 600px; */
+}
+.join-btn:hover {
+  background-color: rgb(51, 51, 196) !important; /* Force the background color to change */
+  color: white !important; /* Force the text color to change */
+  transition: 0.5s; /* Smooth transition */
+}
+.join-btn a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  text-decoration: none;
+    background: transparent; /* Ensure the background is transparent */
+  color: inherit; /* Inherit the color from the parent */
+
+
+}
+
+.join-btn .dir{
+  background: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 46%; /* Make the element circular */
+  width: 20px; /* Set a fixed width */
+  height: 20px; /* Set a fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: white;
+}
+
+.item-feature ul{
+  color: white;
+  list-style: none;
+
+  font-size:20px ;
+  font-family: "Afacad Flux", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  font-weight: 400;
+}
+.item-feature ul li{
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.item-feature ul li i{
+ background: white;
+ font-size: 12px;
+ color: black;
+ padding: 2px 4px;
+ border-radius: 10px;
+}
+/* -------------------about section------------------- */
+.about{
+ position: relative;
+ top: 0;
+ left:0;
+  width: 100%;
+  min-height: 100%; /* Ensures the section expands with content */
+  padding-bottom: 50px; /* Adds space at the bottom */
+  margin: 0;
+  overflow: visible;
+    animation:slideup linear ;
+ animation-timing-function: ease-in-out;
+  animation-range: enter;
+  
+  animation-duration: 2s;
+}
+.About-container {
+  position: relative; /* Ensures proper positioning */
+  background-image: url('./images/about2.png'); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat:no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full viewport width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  gap: 70px;
+
+}
+.about-text{
+  position: relative;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  z-index: 1;
+  animation: slideup linear ;
+
+}
+.about-text h1 {
+ 
+  color:white;
+  font-family: 'syne', sans-serif;
+  font-weight: 700; /* Bold */
+  font-optical-sizing: auto;
+  
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  /* font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal; */
+  font-size: 80px;
+  text-align: center; /* Centers the text */
+   /* Adjusts spacing between the lines */
+
+}
+
+.about-text h1 .line1 {
+  display: block; /* Ensures the first line is on top */
+  margin-bottom: 5px; /* Adds space below the first line */
+}
+
+.about-text h1 .line2 {
+  display: block; /* Ensures the second line is below the first */
+  font-size: 80px; /* Optional: Adjust font size for the second line */
+}
+
+ /* .about-text p{
+  position: relative;
+  top:-50%;
+  color:silver;
+  font-size: 18px;
+  font-family: 'syne', sans-serif;
+  font-weight: 700; 
+  font-optical-sizing: auto;
+  
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+
+} */
+.about-text p {
+  position: relative;
+  top:-14%;
+  color: white; /* Ensure the text color contrasts with the background */
+  font-size: 16px; /* Adjust font size */
+  visibility: visible; /* Ensure the text is visible */
+  opacity: 1; /* Ensure the text is not transparent */
+  display: block; /* Ensure the element is displayed */
+  text-align: center;
+  justify-content: center;
+  color:silver;
+  font-size: 18px;
+  font-family: 'syne', sans-serif;
+  font-weight: 700; 
+  font-optical-sizing: auto;
+  
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+.about-mid{
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100vh;
+  font-family: "Barlow", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 20px;
+  color: white;
+ background-image: url(./images/about3.png);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+ 
+}
+
+.about-mid *{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+ 
+}
+.about-mid ul li {
+  position: relative;
+  padding: 10px 0; /* Adds spacing between the text and the line */
+  border-bottom: 1px solid white; /* Adds a horizontal line */
+}
+.about-mid_img{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border: none; /* Removes any default border */
+  margin: 0;
+  padding: 0; /* Removes any default padding */
+  background-color: transparent;
+}
+
+.img{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+#img2{
+  position:absolute;
+  top:29%;
+}
+.Contact-btn a{
+  position: relative;
+  left: 20px;
+  translate: (-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+ font-size: 20px;
+ background-color: white;
+ color: black;
+ padding: 10px 20px;
+ border-radius: 25px;
+ font-family: "Afacad Flux", serif;
+ font-optical-sizing: auto;
+ font-style: normal;
+ font-variation-settings: "slnt" 0;
+ font-weight: 400;
+}
+
+.Contact-btn i{
+  background: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 46%; /* Make the element circular */
+  width: 20px; /* Set a fixed width */
+  height: 20px; /* Set a fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: white;
+}
+.Contact-btn:hover a {
+  background-color: rgb(51, 51, 196) !important; /* Force the background color to change */
+  color: white !important; /* Force the text color to change */
+  transition: 0.5s; /* Smooth transition */
+}
+.about-mid_img img {
+  width: 450px; /* Adjust the size of the image */
+  filter: brightness(1.5) contrast(1.5);  
+  transform: scale(1);
+  /* Adds a smooth transition effect */
+}
+
+.about-mid ul li {
+  display: flex;
+  gap: 10px;
+  align-items: start;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: left;
+  opacity: 0; /* Start hidden */
+  transform: translateX(-100%); /* Start off-screen */
+  transition: all 1s ease-in-out; /* Smooth transition */
+}
+
+.about-mid ul li.animate {
+  opacity: 1; /* Make visible */
+  transform: translateX(0);
+  transition-duration: 2s; /* Move to the original position */
+}
+/* --------------------------feature-------------------  */
+/* .about-feature{
+  margin-top: 95px; 
+  position: relative; 
+
+
+  background:#0f1923;
+  width: 100%;
+  height: 100vh;
+  
+}
+.feature-container{
+
+  margin: 10px;
+  padding: 0px;
+  width: 95%;
+  height: 100vh;
+ background: #111e2b;
+ margin: 20px 20px;
+
+
+
+}
+
+.contents{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  height: 100vh;
+ 
+}
+.contents .left-part{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  font-family: 'syne', sans-serif;
+  font-weight: 700;
+  font-optical-sizing: auto;
+  
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  text-align: left;
+  gap: 3px;
+  font-size: 18px;
+  text-align: center;
+}
+.contents .left-part video{
+  width: 200px;
+  height: 200px;
+}
+.contents .right-part{
+ color:white;
+ font-family: 'syne', sans-serif;
+  font-weight: 700; 
+  font-optical-sizing: auto;
+  font-size: 25px;
+
+}
+ */
+
+
+/* ---------------------------STEP-CONTAIONER------------------ */
+.step-section{
+  position: relative;
+  margin-top:85px ;
+  background-color: #0f1923;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.step-container {
+  background-image: url(./images/step.png); /* Replace with your image path */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-size: contain; /* Ensures the image fits within the container */
+  background-position: center; /* Centers the image horizontally and vertically */
+  background-size: 1000px 624px;
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height of the container */
+  display: flex; /* Optional: Use flexbox for additional alignment */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  animation:slideup linear ;
+ animation-timing-function: ease-in-out;
+  animation-range: enter;
+  
+  animation-duration: 5s;
+  overflow: hidden; /* Prevents content from overflowing */
+ 
+
+}
+
+.step
+{
+  position:relative;
+  top: -10%;
+ 
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+ justify-content: center; 
+  gap: 5px;
+  animation: fade-in linear forwards ease-;
+  animation-timeline: view();
+  animation-range-end: 500px;
+  animation-duration: 5s;
+}
+
+.step h2{
+  text-align: center;
+  color: white;
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size:62px ;
+
+  
+}
+
+.steps{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap:50px;
+}
+.step1{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+ 
+  color: aliceblue;
+  font-family: "Barlow", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  text-align: left;
+  gap: 3px;
+  font-size: 18px;
+}
+
+.step1 h2{
+ font-size:25px;
+}
+/* -----------------------------brand------------------- */
+.brand{
+  position: relative;
+
+  background-color: #0f1923;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+ 
+  animation:fade-out linear forwards;
+  animation-timeline: view();
+  animation-range: exit;
+
+
+ 
+}
+.pramotion{
+  position: relative;
+ top:-30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;
+  gap: 20px;
+
+}
+.pramotion .title{
+color: white;
+font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 30px;
+  
+  animation: fade-in linear forwards ;
+  animation-timeline: view();
+  animation-range-end:500px;
+ 
+}
+
+.pramotion-img{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range-end: 400px;
+}
+/* -------------------get-section------------------- */
+.getbg-video {
+  position: absolute; /* Ensures the video is positioned relative to the section */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Full viewport height for the section */
+  z-index: -1; /* Places the video behind the content */
+  transform-origin: bottom;
+
+}
+
+video{
+  width: 100%;
+  height: 100vh; /* Full viewport height for the section */
+  object-fit: cover; /* Ensures the video covers the section */
+ 
+}
+
+/* Content on Top of the Video */
+.get-content {
+  position: absolute; /* Ensures the content is positioned relative to the section */
+  top: 50%; /* Centers the content vertically */
+  left: 50%; /* Centers the content horizontally */
+  transform: translate(-50%, -50%); /* Adjusts the position to the center */
+  z-index: 1; /* Higher z-index to place it above the video */
+  color: white; /* Ensure the text is visible over the video */
+  text-align: center; /* Centers the content horizontally */
+  padding: 50px; /* Adds spacing around the content */
+}
+
+.get-content h1 {
+  font-size: 50px; /* Adjust font size */
+  font-family: 'syne', sans-serif;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.get-content p {
+  font-size: 18px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+/* ---------------------footer--------------------- */
+.footer_container{
+  background: #0f1923 ;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction:row ;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.menu{
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  gap: 30px;
+ text-align: left;
+ 
+}
+.menu #title{
+  color: white;
+  font-family: 'Circular Std', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+
+
+}
+.menu-item a{
+  text-decoration: none;
+  color:#979797;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+ cursor: pointer;
+}
+.menu p{
+  color:#979797;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.social{
+  position: relative;
+  top: -15%;
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+  
+  gap:30px;
+}
+
+.social #title{
+  color: white;
+  font-family: 'Circular Std', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+.social-item a{
+  text-decoration: none;
+  color:#979797;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+ cursor: pointer;
+}
+.social p{
+  color:#979797;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+.form{
+  position: relative;
+  top: -8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  gap: 20px;
+}
+.form #title{
+  color: white;
+  font-family: 'Circular Std', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.form p{
+  color:#979797;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+.form h2{
+  color: white;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+}
+/* #form {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+ 
+}
+.check_box input[type="checkbox"] {
+  background: none;
+  width: 16px;
+  height: 16px;
+}
+.check_box label,a{
+  color: #979797;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: none;
+} */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form label {
+  color: white;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+form .subscribe{
+  display:flex;
+  flex-direction:row ;
+  gap:20px;
+}
+form input[type="email"] {
+  background: transparent; /* Makes the background transparent */
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc; /* Default border color */
+  border-radius: 5px;
+  width: 100%;
+  color: white; /* Ensures the text is visible */
+  outline: none; /* Removes the default focus outline */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+form input[type="email"]:hover {
+  border-color: white; /* Changes the border color to white on hover */
+}
+
+form input[type="email"]:focus {
+  border-color: white; /* Changes the border color to white when focused */
+}
+
+.subscribe {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.subscribe input[type="checkbox"] {
+  appearance: none; /* Removes default checkbox styling */
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc; /* Default border color */
+  border-radius: 4px; /* Optional: Makes the checkbox slightly rounded */
+  background: transparent; /* Transparent background */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.subscribe input[type="checkbox"]:hover {
+  border-color: white; /* Changes border color to white on hover */
+}
+
+.subscribe input[type="checkbox"]:checked {
+  background-color: white; /* White background when checked */
+  border-color: white; /* White border when checked */
+}
+
+.subscribe input[type="checkbox"]:checked::after {
+  content: "✔"; /* Adds a checkmark when checked */
+  font-size: 16px;
+  color: black; /* Checkmark color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -1px;
+}
+
+
+form button {
+  background: transparent; /* Transparent background */
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  color:#979797; /* Text color */
+  border: 1px solid #ccc; /* Default border color */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  outline: none; /* Removes the default focus outline */
+}
+
+form button:hover {
+  border-color: white; /* Changes the border color to white on hover */
+  background:rgb(51, 51, 196); /* Changes the background to white on hover */
+  color:white; /* Changes the text color to black on hover */
+}
+form button:focus {
+  border-color: white; /* Changes the border color to white when focused */
+}
+
+@keyframes slideup{
+  0%{
+    transform: translatey(100%);
+    opacity: 0;
+  }
+  100%{
+    transform: translatey(0);
+    opacity: 1;
+  }
+}
+@keyframes navanima {
+  0%{
+      background-color: rgb(0, 0, 0, 0.0);
+  }
+  10%{
+      background-color: rgba(0, 0, 0, 0.8);
+  }
+  20%,100%{
+
+      background: #000;
+  }
+
+}
+@keyframes fade-out {
+to{
+  opacity: 0;
+}
+}
+
+@keyframes bg-imageanime {
+  25% {
+    opacity: 1;
+  }
+  85%, 100% {
+    opacity: 0;
+    transform: scale(1.05);
+     /* Avoid excessive scaling */
+  }
+  100%{
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+}
+@keyframes fade-in {
+  from{
+    opacity: 0;
+    transform: translateY(40px); /* Start slightly below the original position */
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes trans-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100%); /* Start off-screen to the left */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* End at the original position */
+  }
+}

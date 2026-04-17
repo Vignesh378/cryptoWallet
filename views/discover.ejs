@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Slabo+27px&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  
+<link rel="stylesheet" href="../style/accounts.css">
+
+<link rel="stylesheet" href="../style/dashboard.css">
+<link rel="stylesheet" href="../style/discover.css">
+<!-- <link rel="stylesheet" href="../style/move.css"> -->
+
+</head>
+<body>
+    <div class="container">
+        <div class="leftslidemenu">
+           <div class="menu-content">
+            <div class="logo">
+            <h1>Block <br><span>Stash</span></h1>    
+            </div>
+            <div class="links">
+                <a href="/dashboard" class="dashboard ">
+                    <i class="fa-solid fa-table-columns"></i>Dashboard
+                </a>
+               <a href="/discover" class="discover active ">
+                    <i class="fa-solid fa-compass"></i>Discover
+                </a>
+                
+            </div>
+           </div>
+        </div>
+        <div class="right-container">
+           <div class="header">
+  <div class="top">
+      <div class="title">
+          <h1>Discover</h1> 
+      </div>
+      <div class="sub-title">
+          <div class="sub-title">
+              <div class="search">
+                  <button id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  <input type="text" id="search-input" placeholder="Search for a coin">
+                
+              </div>
+              <div id="suggestions" class="suggestions"></div> <!-- Suggestions container -->
+          </div>
+          <div class="notification">
+              <i class="fa-solid fa-bell"></i>
+          </div>
+           <div class="account-logo ">
+            <img src="../images/MetaMask_Fox.svg.png" alt="account-image" style="width: 30px; height: 30px; border-radius:10px ;">
+          
+         </div>
+     
+      </div>
+  
+  </div>
+  <div class="options">
+    <div class="choose" id="on" data-target="token-container">
+      <a href="#tokens">Tokens</a>
+  </div>
+  <div class="choose" data-target="nft-container">
+      <a href="#nfts">NFTs</a>
+  </div>
+  <div class="choose" data-target="games-container">
+      <a href="#games">Games</a>
+  </div>
+  </div>
+</div>
+<div class="dropbox hidden" >
+<h1>Block <br><span>Stash</span></h1>
+<form action="" method="post">
+  <div class="inputs">
+    <label for="Email">Email</label>
+    <input type="email" name="email" id="email" required>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required>
+  </div>
+
+  <button type="submit">Login</button>
+  <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+  <p>Forgot Password? <a href="/forgot-password">Reset</a></p>
+  <p>By signing up, you agree to our  <a href="/terms">Terms of Service <br></a> and <a href="/privacy">Privacy Policy</a>.</p>
+</form>
+</div>
+
+<div class="main-container">
+  <div class="token-container" >
+  <div class="ticker">
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "Ethereum"
+    },
+    {
+      "description": "",
+      "proName": "COINBASE:SOLUSD"
+    },
+    {
+      "description": "",
+      "proName": "COINBASE:XRPUSD"
+    },
+    {
+      "description": "",
+      "proName": "COINBASE:SUIUSD"
+    },
+    {
+      "description": "",
+      "proName": "COINBASE:ADAUSD"
+    },
+    {
+      "description": "",
+      "proName": "COINBASE:DOGEUSD"
+    },
+    {
+      "description": "",
+      "proName": "COINBASE:LINKUSD"
+    },
+    {
+      "description": "",
+      "proName": "COINBASE:LTCUSD"
+    },
+    {
+      "description": "",
+      "proName": "COINBASE:XLMUSD"
+    },
+    {
+      "description": "",
+      "proName": "COINBASE:ONDOUSD"
+    },
+    {
+      "description": "",
+      "proName": "COINBASE:SHIBUSD"
+    },
+    {
+      "description": "",
+      "proName": "COINBASE:SHIBUSD"
+    },
+    {
+      "description": "",
+      "proName": "COINBASE:HBARUSD"
+    }
+  ],
+  "showSymbolLogo": true,
+  "isTransparent": false,
+  "displayMode": "adaptive",
+  "colorTheme": "dark",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+  </div>
+  <div class="top-part">
+     
+    <div class="total-balance">
+      <h2><i class="fa-solid fa-chart-line"></i>Total Token Balance</h2>
+      <p>$ <span>0.00</span></p>
+
+    </div>
+    <div class="changes-24">
+      <h2><i class="fa-solid fa-clock"></i>24h Changes</h2>
+      <p> <span>0.00</span>%</p>
+    </div>
+  </div>
+  <div class="lower-part">
+      <div class="watchlist">
+          <h1>Watchlist</h1>
+          <div class="search">
+            <div class="search-btn">
+              <button id="search-button" ><i class="fa-solid fa-magnifying-glass"></i></button>
+              <input type="text" id="search-input" placeholder="Search for a coin" >
+            </div>
+             <p>No Crypto In Watchlist</p>
+
+          </div>
+         
+      </div>
+      
+        <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+  {
+  "width": "100%",
+  "height": "800",
+  "symbolsGroups": [
+    {
+      "name": "Crypto",
+      "symbols": [
+        {
+          "name": "COINBASE:BTCUSD"
+        },
+        {
+          "name": "COINBASE:ETHUSD"
+        },
+        {
+          "name": "COINBASE:SOLUSD"
+        },
+        {
+          "name": "COINBASE:XRPUSD"
+        },
+        {
+          "name": "COINBASE:SUIUSD"
+        },
+        {
+          "name": "COINBASE:DOGEUSD"
+        },
+        {
+          "name": "COINBASE:ADAUSD"
+        },
+        {
+          "name": "COINBASE:LINKUSD"
+        },
+        {
+          "name": "COINBASE:XLMUSD"
+        },
+        {
+          "name": "COINBASE:LTCUSD"
+        },
+        {
+          "name": "COINBASE:ONDOUSD"
+        },
+        {
+          "name": "COINBASE:SHIBUSD"
+        },
+        {
+          "name": "COINBASE:XCNUSD"
+        },
+        {
+          "name": "COINBASE:XCNUSD"
+        },
+        {
+          "name": "COINBASE:SHIBUSD"
+        },
+        {
+          "name": "COINBASE:AVAXUSD"
+        },
+        {
+          "name": "COINBASE:ETHBTC"
+        },
+        {
+          "name": "COINBASE:MATICUSD"
+        },
+        {
+          "name": "COINBASE:BONKUSD"
+        },
+        {
+          "name": "COINBASE:JASMYUSD"
+        },
+        {
+          "name": "COINBASE:DOTUSD"
+        },
+        {
+          "name": "COINBASE:AAVEUSD"
+        },
+        {
+          "name": "COINBASE:PEPEUSD"
+        }
+      ]
+    }
+  ],
+  "showSymbolLogo": true,
+  "isTransparent": false,
+  "colorTheme": "dark",
+  "locale": "en",
+  "backgroundColor": "rgba(0, 0, 0, 1)"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+
+      
+
+ </div>
+
+  </div>
+
+  <div class="nft-container hidden" >
+      <div class="trending">
+          <h1>Trending nft's</h1>
+          <div class="nft-cards" style="--width:200px; height: 250px; --quantity:6;" >
+             
+      </div>
+      
+  </div>
+  <div class="growth-potential" >
+      <h1>Growth-Potential</h1>
+      <div class="nft-cards" style="--width:200px; height: 250px; --quantity:5">
+             
+      </div>
+  </div>
+  <div class="collectables">
+    <h1>Collectables</h1>
+    <div class="nft-cards" style="--width:200px; height: 250px; --quantity:6;" >
+       
+</div>
+</div>
+<div class="brokers">
+  <h1>NFT's Marketplaces</h1>
+  <div class="nfts-b">
+    
+      <div class="b">
+        <a href="https://opensea.io/">
+        <div class="logo">
+          <img src="../images/OpenSea-Emblem-removebg-preview.png" alt="opensea" style="width: 50px; height: 30px;">
+          <h2>Opensea</h2>
+          
+        </div>
+        <p>OpenSea is the world's first and <br> largest web3 marketplace for NFTs <br>and crypto collectibles.</p>
+  
+      </a>
+    </div>
+    <div class="b">
+      <a href="https://looksrare.org/">
+        <div class="logo">
+          <img src="../images/looksrare-logo-png_seeklogo-433081-removebg-preview.png" alt="opensea" style="width: 30px; height: 20px;">
+          <h2>LooksRare</h2>
+          
+        </div>
+        <p>LooksRare is a community-first  <br>marketplace for NFTs and digital <br> collectibles on Ethereum...</p>
+  
+      </a>
+    </div>
+    <div class="b">
+      <a href="https://blur.io/">
+        <div class="logo">
+          <img src="../images/blur-logo.jpeg" alt="opensea" style="width: 50px; height: 30px; border-radius: 15px;">
+          <h2>Blur</h2>
+          
+        </div>
+        <p>Sweep NFTs across multiple <br> marketplaces, snipe reveals faster  <br>than others, and manage your...</p>
+  
+      </a>
+    </div>
+    <div class="b"> <a href="https://zora.co/">
+      <div class="logo">
+        <img src="../images/zora-logo-removebg-preview.png" alt="opensea" style="width: 30px; height: 30px;">
+        <h2>Zora</h2>
+        
+      </div>
+      <p>Zora is a space for creators and <br> collectors to enjoy Ethereum and the <br> opportunities it creates.</p>
+
+    </a></div>
+   
+  </div>
+</div>
+</div>
+<div class="games-container hidden">
+  <div class="row1">
+      <div class="game">
+          <img src="../images/craft-world.png" alt="craft-world">
+          <h1>Craft World</h1>
+          <p>Multiplayer, Singleplayer, Farming 
+            <br>& Crafting</p>
+
+      </div>
+      <div class="game">
+     
+          <img src="../images/xociety.png" alt="craft-world">
+          <h1>XOCIETY</h1>
+          <p>Rogue-Lite, Third-Person <br>Shooter, Multiplayer</p>
+
+      </div>
+      <div class="game">
+          <img src="../images/legions.png" alt="craft-world">
+          <h1>LEGIONS 2029</h1>
+          <p>Action, Role-Playing, Rogue like</p>
+
+      </div>
+  </div>
+  <div class="row1">
+      <div class="game">
+          <img src="../images/bushi.png" alt="craft-world">
+          <h1>BUSHI</h1>
+          <p>Action, Adventure</p>
+
+      </div>
+      <div class="game">
+     
+          <img src="../images/trouble-punk.png" alt="craft-world">
+          <h1>TroublePunk</h1>
+          <p>Action, Multiplayer,Dapp</p>
+
+      </div>
+      <div class="game">
+          <img src="../images/awakening.png" alt="craft-world">
+          <h1>Unfettered Awakening</h1>
+          <p>Action, Indie, Rogue-Lite, Survival</p>
+
+      </div>
+  </div>
+  <div class="row1">
+      <div class="game">
+          <img src="../images/kokodi.png" alt="craft-world">
+          <h1>KOKODI</h1>
+          <p>RPG, Fantasy, MMO,</p>
+
+      </div>
+      <div class="game">
+     
+          <img src="../images/L3E7.png" alt="craft-world">
+          <h1>L3E7</h1>
+          <p>Sci-Fi & Cyberpunk, Exploration, Life & Immersive</p>
+
+      </div>
+      <div class="game">
+          <img src="../images/soccerverse.png" alt="craft-world">
+          <h1>Soccerverse</h1>
+          <p>Team Sports, RPG, Fully Onchain Game</p>
+
+      </div>
+  </div>
+ <div class="info">
+  <h1>More Games</h1>
+   <a href="https://dappradar.com/rankings/category/games">For more <i class="fa-solid fa-angle-right"></i></a>
+ </div>
+ 
+
+</div>
+
+
+</div>
+          </div> 
+          </div>
+    
+
+
+<script src="../script/discover.js"></script>
+<script src="../script/account.js"></script>
+
+</body>
+</html>

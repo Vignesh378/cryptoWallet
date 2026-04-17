@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Slabo+27px&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="../style/seed.css">
+</head>
+<body>
+    <div class="container">
+        <div class="video-background">
+            <video autoplay loop muted playsinline>
+              <source src="./Screen Recording 2025-03-21 173326.mp4" type="video/mp4">
+            </video>
+          </div>
+         
+          <div class="seed-phrase">
+            <div class="statement">
+                <h1>Block <br> <span>Stash</span>
+                </h1>
+                <p>This phrase is the only way to recover your BlockStash wallet.
+                    BlockStash cannot recover this for you.
+                    <br>
+                    Write your phrase down and store it in a secure, offline location. <br>
+
+                    Consider using a hardware wallet or physical backup (paper or metal). <br>
+
+                    Do not take screenshots or store it digitally. <br>
+                    Anyone with your Secret Recovery Phrase can access and control your wallet.
+
+BlockStash will never ask for your phrase. You are the only one who can protect it. <br>
+                    </p>
+              </div>
+            <ol>
+             <% words.forEach((word,index)=>{%>
+              <li> <div class="seeds">
+                <%=word%>
+              </div></li>
+             <%}) %>
+             
+            </ol>
+            <div class="btn">
+                <button>NEXT</button>
+              </div>
+          </div>
+        
+    </div>
+   <script>
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        // Select all <li> elements inside the <ol>
+        const liElements = document.querySelectorAll('.seed-phrase ol li');
+        const words = [];
+
+        // Iterate over the <li> elements and extract the text content
+        liElements.forEach((li) => {
+            const word = li.textContent.trim(); // Get the text content of each <li>
+            words.push(word); // Append the word to the array
+        });
+
+        console.log('Words:', words); // Debugging: Log the words array
+      const email= localStorage.getItem('email');
+      console.log(email);
+        // Send the words to the backend
+        const sendButton = document.querySelector('.btn button'); // Select the "NEXT" button
+      sendButton.addEventListener('click', async () => {
+    fetch('/save-seed', {
+        method: 'POST',
+        headers: {
+            "content-type": 'application/json',
+        },
+        body: JSON.stringify({ email, seed: words.join(' ') }),
+    })
+    .then(async res => {
+        // Try to parse JSON only if response is OK and content-type is JSON
+        if (res.ok) {
+            const data = await res.json();
+            if (data.redirect) {
+                window.location.href = data.redirect;
+            }
+        } else {
+            // Try to get error message from response
+            let errorMsg = 'Unknown error';
+            try {
+                const err = await res.json();
+                errorMsg = err.message || errorMsg;
+            } catch (e) {}
+            alert('Error: ' + errorMsg);
+        }
+    })
+    .catch(err => {
+        alert('Network error: ' + err);
+    });
+
+});
+    });
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Slabo+27px&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  
+ <style>
+    
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  background-image: url("./Wix-Studio-My-Site-13 (1).png"), linear-gradient(to right, #0f1923, #0f1923);
+  background-size: auto 100%;
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-attachment: initial;
+ 
+}
+
+header {
+ 
+ padding: 0px 0;
+ margin: 0px;
+ width: 100%;
+ position: fixed; /* Make the header fixed */
+ top: 0; /* Position it at the top of the viewport */
+ z-index: 1000; /* Make sure it stays on top */  
+ animation: navanima linear;
+ animation-timeline: scroll();
+ 
+}
+nav {
+display: grid;
+grid-template-columns: 1fr 3fr 1fr;
+align-items: center;
+max-width: 95%;
+ margin: 0 auto;
+ padding: 0 20px;
+color: rgb(255, 255, 255);
+
+
+}
+.logo a {
+ font-family: 'Circular Std', sans-serif;
+ font-weight: 700;
+
+ margin: 0;
+ cursor: pointer;
+ text-decoration: none;
+ color: white;
+ font-size: 30px;
+}
+.logo a span{
+ color: red;
+}
+.nav-links {
+ padding-right: 0px;
+ list-style: none;
+ display: flex;
+ align-items: center;
+ gap: 20px;
+}
+.nav-links  li>a{
+  text-decoration: none;
+  font-size:16px ;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+ 
+}
+
+.nav-links li:hover{
+ color:rgb(51, 51, 196);
+ transition: 0.3s;
+ cursor: pointer;
+}
+
+.create-btn {
+ position: relative; /* Allows positioning of pseudo-elements */
+ display: inline-block;
+
+ overflow: hidden; /* Ensures content doesn't overflow the button */
+
+
+}
+
+.create-btn a {
+  font-size: 20px;
+ font-family: "Afacad Flux", serif;
+  font-weight: 600;
+ text-decoration: none;
+ color:black;
+ align-items: center;
+ position: relative;
+display: inline-block;
+background-color: white;
+ border-radius: 25px;
+align-content: center;
+padding: 10px 30px;
+transition: transform 0.3s ease; /* Smooth transition for movement */
+ position: relative;
+ z-index: 1; /* Keeps the anchor tag above the pseudo-element */
+ 
+}
+.create-btn a:hover{
+ background: rgb(51, 51, 196);
+ color:white;
+ transition: 0.5s;
+}
+
+.main-container {
+  margin-top: 80px; 
+  padding: 10px 10px;/* Push the main container below the header */
+ /* Optional: Add some padding for spacing */
+  position: relative;
+ left: 0;
+ top:0;
+ 
+}
+
+.main-container .content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+overflow: hidden;
+}
+.main-container .content h1{
+  position: relative;
+  left: 8%;
+  padding-left:100px ;
+  font-size: 50px; /* Adjust font size */
+  font-family: 'syne', sans-serif;
+  font-weight: 800;
+  
+  margin: 0;
+  padding: 0;
+}
+.parts{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+ color: white;
+}
+.left-part{
+  font-size: 20px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+}
+.mid-part{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.top-img{
+ position: relative;
+ top: 0;
+ left:0;
+}
+.top-img img{
+  width: 400px;
+  height: 400px;
+}
+.mid-img img{
+  position: absolute; /* Ensures the content is positioned relative to the section */
+  top: 50%; /* Centers the content vertically */
+  left: 52%; /* Centers the content horizontally */
+  transform: translate(-50%, -50%); /* Adjusts the position to the center */
+ /* Smooth transition for rotation */
+
+  width: 150px;
+  height: 150px;
+  
+}
+.right-part{
+ font-size:20px ;
+ font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+}
+.about-company{
+  background-image:url("./images/Screenshot\ 2025-04-14\ 160041\ \(1\).png") ;
+  background-size:cover;
+  width: 100vw;
+height:40vh; /* Full height of the viewport */
+
+background-repeat: no-repeat;
+background-attachment: initial;
+
+margin: 0px;
+padding: 0px;
+overflow: hidden;
+
+}
+.about-content{
+  position: relative;
+  top: 25%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+ 
+}
+.about-content .content{
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  gap: 8px;
+
+ /* Adjusts the position to the center */
+
+}
+.about-content .content i{
+  background:white;
+ text-align: center;
+ align-content: center;
+
+  width: 50px;
+  height: 50px;
+  color: black;
+  font-size: 20px;
+  border-radius: 30px;
+  
+  
+ 
+}
+.about-content .content p{
+  color: white;
+  font-size: 40px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+}
+.horizontal{
+  position: relative;
+ 
+  content:"";
+  width: 80%;
+  height: 0.5px;
+  background: white;
+  background-position: center;
+ border: 0.5px solid white;
+
+  margin: 0 auto;
+
+  
+}
+.emp
+{ position: relative;
+   width: 100%;
+  height: 100%;
+  background:#0f1923;
+  background-size: cover;
+  background-position: center;
+  background-attachment: initial;
+  margin: 0px;
+  padding: 0px;
+  
+}
+.emp-container{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 50px;
+  padding: 20px 10px;
+  
+ 
+}
+.emp-container>h1{
+  color: #979797;
+  font-size: 35px; /* Adjust font size */
+  font-family: 'syne', sans-serif;
+  font-weight: 400;
+  
+  margin: 0;
+  padding-top:50px ;
+  padding-left: 10px;
+}
+.emp-container .content{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+  overflow: hidden;
+
+}
+.emp-container .content .left-content{
+ display: grid;
+ grid-template-columns: repeat(2,1fr);
+ grid-template-rows: repeat(2,1fr);
+ gap: 20px;
+ row-gap: 30px;
+ 
+ align-items: center;
+ justify-content: center;
+ 
+ animation: leftmove linear;
+  animation-fill-mode: forwards; /* Ensures the animation stays at the end state */
+  animation-delay: 0.5s; /* Optional delay before the animation starts */
+  animation-duration: 4s; /* Duration of the animation */
+  animation-timing-function: ease-in-out; /* Smooth transition */
+  padding-left:50px;
+  
+}
+.emp-container .content .left-content .items{
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  
+
+}
+.items h1{
+  color: white;
+  font-size: 40px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+}
+.items h2{
+  color: white;
+  font-size: 60px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+}
+.items p{
+  color: #979797;
+  font-size: 18px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+}
+.emp-container .content .right-content{
+ position: relative;
+ right: 0;
+ animation: rightmove linear;
+  animation-fill-mode: forwards; /* Ensures the animation stays at the end state */
+  animation-delay: 0.5s; /* Optional delay before the animation starts */
+  animation-duration: 4s; /* Duration of the animation */
+  animation-timing-function: ease-in-out; /* Smooth transition */
+
+}
+.emp-container .content .right-content img{
+  width: 600px;
+  height: 600px;
+}
+/* ------------------------job-offers------------------ */
+.job-offers{
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 200px;
+ 
+ background: #0f1923;
+
+}
+.offer-container{
+  background: #CAD7FF;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+  border-radius: 20px;
+  padding:20px 0px ;
+  height: 100vh;
+}
+.job-offers .job-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+ }
+ .job-offers .job-text h1{
+  color:black;
+  font-size: 40px;
+  font-family: 'syne', sans-serif;
+  font-weight: 700;
+  margin: 0;
+}
+.job-offers .job-text p{
+  color: #979797;
+  font-size: 20px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+
+}
+
+
+.offer-container .offers{
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-evenly;
+  align-items: center;
+  gap: 20px;
+ 
+}
+.offer-container .offers .offer{
+ background: white;
+  padding: 20px 30px;
+  border-radius: 20px;
+   display: flex;
+   flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+.offer .offer-head h1{
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 30px;
+}
+.offer p{
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
+}
+.offer-divider {
+  border: none; /* Remove default border */
+  height: 1px; /* Set the height of the line */
+  background: #ccc; /* Set the color of the line */
+  margin: 20px 0; /* Add spacing above and below the line */
+  width: 100%; /* Make it span the full width of the container */
+}
+.offer .specification{
+  display: grid;
+grid-template-columns: repeat(2,1fr);
+grid-template-rows:repeat(2,1fr) ;
+gap: 20px;
+}
+.offer .specification p{
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+}
+.offer .learn-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   margin-top: 30px;
+  
+
+}
+.offer .learn-btn a{
+  background: #3567FD;
+   color: white;
+   padding: 15px 30px;
+   border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
+}
+.offer .learn-btn a:hover{
+  background: #0f1923;
+   color:white;
+   transition: 0.5s;
+}
+
+/* --------------------------contact us------------------ */
+.contact-us {
+  background-color: #0f1923; /* Dark background */
+  color: white; /* Text color */
+  padding: 50px 20px; /* Spacing around the section */
+  text-align: center; /* Center-align the heading */
+}
+
+.contact-us h1 {
+  font-size: 36px; /* Adjust heading size */
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  margin-bottom: 30px; /* Space below the heading */
+}
+
+.contact-form {
+  max-width: 800px; /* Limit the form width */
+  margin: 0 auto; /* Center the form */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between rows */
+}
+
+.form-row {
+  display: flex;
+  gap: 20px; /* Space between columns */
+}
+
+.form-group {
+  flex: 1; /* Equal width for form groups */
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  margin-bottom: 5px; /* Space below the label */
+}
+
+.form-group input,
+.form-group textarea {
+  background: transparent; /* Transparent background */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Inner padding */
+  font-size: 14px;
+  color: white; /* Text color */
+  outline: none; /* Remove default focus outline */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: white; /* Highlight border on focus */
+}
+
+textarea {
+  resize: none; /* Disable resizing */
+}
+
+.submit-btn {
+  background-color: #3567FD; /* Button background */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Button padding */
+  font-size: 16px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 500;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.submit-btn:hover {
+  background-color: #0f1923; /* Change background on hover */
+  color: white; /* Keep text color white */
+  border: 1px solid white; /* Add border on hover */
+}
+/* -------------------------------------footer----------------- */
+.footer_container{
+  background: #0f1923 ;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction:row ;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.menu{
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  gap: 30px;
+ text-align: left;
+ 
+}
+.menu #title{
+  color: white;
+  font-family: 'Circular Std', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+
+
+}
+.menu-item a{
+  text-decoration: none;
+  color:#979797;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+ cursor: pointer;
+}
+.menu p{
+  color:#979797;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.social{
+  position: relative;
+  top: -15%;
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+  
+  gap:30px;
+}
+
+.social #title{
+  color: white;
+  font-family: 'Circular Std', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+.social-item a{
+  text-decoration: none;
+  color:#979797;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+ cursor: pointer;
+}
+.social p{
+  color:#979797;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+.form{
+  position: relative;
+  top: -15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  gap: 10px;
+}
+.form #title{
+  color: white;
+  font-family: 'Circular Std', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.form p{
+  color:#979797;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+.form h2{
+  color: white;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+}
+.explore-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: left;
+  gap: 10px;
+
+   
+ 
+}
+.explore-container li{
+ list-style: none;
+  margin: 0;
+  padding: 0;
+  
+}
+.explore-container li>a{
+  text-decoration: none;
+  color:#979797;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+ cursor: pointer;
+
+}
+@keyframes navanima {
+  0%{
+      background-color: rgb(0, 0, 0, 0.0);
+  }
+  10%{
+      background-color: rgba(0, 0, 0, 0.8);
+  }
+  20%,100%{
+
+      background: #000;
+  }
+
+}
+@keyframes  leftmove {
+  0%{
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  50%{
+      transform: translateX(0%);
+      opacity: 1;
+  }
+  100%{
+      transform: translateX(0%);
+      opacity: 1;
+  }
+  
+}
+@keyframes rightmove {
+  0%{
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  50%{
+      transform: translateX(0%);
+      opacity: 1;
+  }
+  100%{
+      transform: translateX(0%);
+      opacity: 1;
+  }
+  
+}
+ </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+               <a href="/home">Block<span>Stash</span></a> 
+            </div>
+             <ul class="nav-links">
+                
+            <li > <a href="#company">Company</a></li>
+            <li ><a href="/home/news">News</a></li>
+            <li ><a href="/login">CryptoCurrency</a></li>
+            
+            </ul>
+            <div class="create-btn"><a href="/signup">Get Block 
+              </a>
+             
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="main-container">
+            <div class="content">
+              <h1>
+                We Reinvented  <br>Cryptocurrency
+              </h1>
+              <div class="parts">
+                <div class="left-part"><div><p>This is a space to share more about the  <br>business. Take advantage of this long text to <br> tell people who's behind it, what it  does, how it <br> began, and other details. It's an excellent place  <br>
+                to share the story behind the business and <br> describe what this site has to offer its visitors <br></p></div>
+                <div><p>  You can write about the business's history  <br>here, from its founding until now. Draw readers <br> in with an engaging narrative. By telling its  <br>story, you can help people connect to the <br> business. Share what inspired its creation and  <br>what need it was meant to fill. You can include <br> details of the obstacles it overcame to get <br> where it is today.        </p></div>
+                <div><p>This space is also a good spot to talk about a <br>particular feature of the business that sets it <br> apart from its competitors. Explain to readers  <br>what makes this business unique and why they <br>should choose it over other options. Focus on <br> the value this business can offer its users. </p></div>
+               </div>
+
+                  
+                      <div class="mid-part">
+                  <div class="top-img"><img src="./images/midimg.png" alt="mid"></div>
+                <div class="mid-img">  <img src="./images/coin.png" alt="coin"></div>
+                 </div>
+                <div class="right-part">
+                 <div><p>Let visitors to this website know that they'll find <br> what they're looking for right here. Present the  <br>business as the solution to a specific problem <br> and highlight the ways the business's products or <br> services can make life better for people.</p></div>
+                 <div><p>Outline the business's mission and core values. <br> Describe the principles that drive its work and the <br> standards it upholds. In a few words, explain the <br> impact this business has had, or hopes to have, <br> on its community and the world.</p></div>
+                 <div><p>Tell readers how the business puts its users first. <br> Emphasize how it looks out for them, finding <br> solutions to meet their needs and keep them  <br>satisfied. Reassure prospective clients and <br> customers that they won't regret choosing the <br> business's services or products.</p></div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="about-company">
+          <p class="horizontal"></p>
+          <div class="about-content">
+            <div class="content">
+              <i class="fa-solid fa-check"></i>
+              <p>Trusted</p>
+            </div>
+            <div class="content">
+              <i class="fa-solid fa-check"></i>
+              <p>Secure</p>
+            </div>
+            <div class="content">
+              <i class="fa-solid fa-check"></i>
+              <p>Reliable</p>
+            </div>
+          </div>
+        </div>
+        <div class="emp">
+         <div class="emp-container">
+           <h1>BlockStash in Number</h1>
+           <div class="content">
+            <div class="left-content">
+              <div class="items">
+                <h1>Founded</h1>
+                 <h2>2025</h2>
+                <p>Blockstash securely stores crypto assets, innovating <br>since its 2025 founding.</p>
+              </div>
+              <div class="items">
+                <h1>Products Feature</h1>
+                 <h2>200+</h2>
+                <p>Blockstash products securely manage crypto with innovation <br> and user accessibility.</p>
+              </div>
+              <div class="items">
+                <h1>Number of Users</h1>
+                 <h2>2025</h2>
+                <p>Blockstash boasts 2025+ users, ensuring secure and innovative crypto management.</p>
+              </div>
+              <div class="items">
+                <h1>Digital asset</h1>
+                 <h2>100+</h2>
+                <p>Blockstash supports 100+ digital assets with secure and seamless management.</p>
+              </div>
+            </div>
+            <div class="right-content">
+              <img src="./images/right-hand.png" alt="right-hand">
+            </div>
+           </div>
+
+         </div>
+          <div class="job-offers">
+            <div class="offer-container">
+              <div class="job-text">
+                <h1>Want to Work With BlockStash?</h1>
+                <p>Blockstash offers developers cutting-edge tools, collaborative innovation, growth opportunities, community support,<br> and the chance to shape the future blockchain landscape.</p>
+               </div>
+               <div class="offers">
+                 <div class="offer"><div class="offer-head">
+                  <h1>Senior <br>
+                    UI Designer</h1>
+                 </div>
+                 <hr class="offer-divider">
+                 <p>This is the space to describe an open <br> position and tell people how to <br> apply for the job.</p>
+                 
+                <div class="specification">
+                  <p>Location</p>
+                  <p>Remote</p>
+                  <p>Type</p>
+                  <p>Full Time</p>
+                </div>
+                <div class="learn-btn">
+                  <a href="#learn">Learn More</a>
+                </div>
+              </div>
+          
+               
+                <div class="offer"><div class="offer-head">
+                 <h1>Blockchain <br>
+                  Engineer</h1>
+                </div><hr class="offer-divider">
+                <p>This is the space to describe an open <br> position and tell people how to <br> apply for the job.</p>
+                
+               <div class="specification">
+                 <p>Location</p>
+                 <p>Hybrid</p>
+                 <p>Type</p>
+                 <p>Full Time</p>
+               </div>
+               <div class="learn-btn">
+                 <a href="#learn">Learn More</a>
+               </div>
+             
+              </div>
+              
+                <div class="offer"><div class="offer-head">
+                 <h1>Customer Support <br>
+                  Specialist</h1>
+                </div><hr class="offer-divider">
+                <p>This is the space to describe an open <br> position and tell people how to <br> apply for the job.</p>
+                
+                <div class="specification">
+                 <p>Location</p>
+                 <p>Remote</p>
+                 <p>Type</p>
+                 <p>Full Time</p>
+               </div>
+               <div class="learn-btn">
+                 <a href="#learn">Learn More</a>
+               </div>
+             
+              </div>
+           
+            </div>
+        
+        </div>
+        </div>
+        <div class="contact-us">
+          <h1>Contact Us</h1>
+          <form action="/contact" method="POST" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name">First name *</label>
+                <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last name *</label>
+                <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Enter your message"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+        </div>
+    </main>
+    <footer>
+      <div class="footer_container">
+        <div class="menu">
+          <p id="title">menu</p>
+          <div class="menu-item"><a href="#home">Home</a></div>
+          <div class="menu-item"><a href="#about">About</a></div>
+          <div class="menu-item"><a href="#solutions">Assets</a></div>
+          <div class="menu-item"><a href="#contact">support</a></div>
+          <div class="menu-item"><a href="#create">Get Block</a></div>
+          <p>Privacy Policy <br>
+            Terms & Conditions <br>
+            Cookie Policy</p>
+         </div>
+         <div class="social">
+          <p id="title">social</p>
+          <div class="social-item"><a href="#instagram">@insta</a></div>
+          <div class="social-item"><a href="#Github">Github</a></div>
+          <div class="social-item"><a href="#X">X</a></div>
+          <div class="social-item"><a href="#Youtube">Youtube</a></div>
+          </div>
+          <div class="form">
+            <p id="title"><img src="./images/about-mid.png" alt="mid_image" style="width: 100px;">Explore</p>
+        
+            <ul class="explore-container">
+              <li>
+               <a href="Blogs"> Blogs</a> 
+              </li>
+              <li>
+               <a href="./news.html">News</a>
+              </li>
+
+            </ul>
+            </div>
+            </div>
+    
+        
+        </div>
+      </div>
+    
+    
+     
+    </footer>
+    <script>
+   document.querySelectorAll('header nav .nav-links a').forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const href = link.getAttribute('href'); // use 'link', not 'event.target'
+    console.log(href)
+    if (!href) {
+      console.error('No href found on link');
+      return;
+    }
+
+    fetch(href, {
+      method: 'GET',
+      redirect: 'follow',
+    })
+      .then((response) => {
+        if (response.ok) {
+          window.location.href = href;
+        } else {
+          console.error('Failed to fetch the signup page');
+        }
+      })
+      .catch((err) => {
+        console.error('Error:', err);
+      });
+  });
+});
+
+
+//     document.getElementById('contact-form').addEventListener('submit', async (e) => {
+//   e.preventDefault(); // Prevent the default form submission
+
+//   const formData = new FormData(e.target);
+//   const data = Object.fromEntries(formData.entries()); // Convert form data to an object
+
+//   try {
+//     const response = await fetch('/contact', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(data),
+//     });
+
+//     if (response.ok) {
+//       alert('Message sent successfully!');
+//       e.target.reset(); // Clear the form
+//     } else {
+//       alert('Failed to send message. Please try again later.');
+//     }
+//   } catch (error) {
+//     console.error('Error:', error);
+//     alert('An error occurred. Please try again later.');
+//   }
+// });
+    </script>
+</body>
+</html>

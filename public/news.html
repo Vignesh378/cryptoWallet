@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Slabo+27px&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  
+    <style>
+        html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ height: 100%;
+ /*  */
+}
+
+
+body{
+    background:#0f1923;
+}
+header {
+ 
+ padding: 0px 0;
+ margin: 0px;
+ width: 100%;
+ position: fixed; /* Make the header fixed */
+ top: 0; /* Position it at the top of the viewport */
+ z-index: 1000; /* Make sure it stays on top */  
+ animation: navanima linear;
+ animation-timeline: scroll();
+ 
+}
+nav {
+display: grid;
+grid-template-columns: 1fr 3fr 1fr;
+align-items: center;
+max-width: 95%;
+ margin: 0 auto;
+ padding: 0 20px;
+color: rgb(255, 255, 255);
+
+
+}
+.logo a {
+ font-family: 'Circular Std', sans-serif;
+ font-weight: 700;
+
+ margin: 0;
+ cursor: pointer;
+ text-decoration: none;
+ color: white;
+ font-size: 30px;
+}
+.logo a span{
+ color: red;
+}
+.nav-links {
+ padding-right: 0px;
+ list-style: none;
+ display: flex;
+ align-items: center;
+ gap: 20px;
+}
+.nav-links  li>a {
+ text-decoration: none;
+  font-size:16px ;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+ 
+}
+
+.nav-links li:hover{
+ color:rgb(51, 51, 196);
+ transition: 0.3s;
+ cursor: pointer;
+}
+.create-btn {
+ position: relative; /* Allows positioning of pseudo-elements */
+ display: inline-block;
+
+ overflow: hidden; /* Ensures content doesn't overflow the button */
+
+
+}
+
+.create-btn a {
+font-size: 20px;
+ 
+  font-family: "Afacad Flux", serif;
+  font-weight: 600;
+  
+text-decoration: none;
+ color:black;
+ align-items: center;
+ position: relative;
+display: inline-block;
+
+ 
+
+ background-color: white;
+ border-radius: 25px;
+align-content: center;
+padding: 10px 30px;
+
+ transition: transform 0.3s ease; /* Smooth transition for movement */
+ position: relative;
+ z-index: 1; /* Keeps the anchor tag above the pseudo-element */
+ 
+}
+.create-btn a:hover{
+ background: rgb(51, 51, 196);
+ color:white;
+ transition: 0.5s;
+}
+/* ----------------------main-container-------------------- */
+.main-container {
+  margin-top: 80px; 
+  padding: 10px 40px;/* Push the main container below the header */
+ /* Optional: Add some padding for spacing */
+  position: relative;
+ left: 0;
+ top:0;
+
+ height: 100%;
+}
+.main-container h1{
+  color: white;
+  font-family: 'syne', sans-serif;
+  font-weight: 700; 
+  font-optical-sizing: auto;
+  font-size: 70px;
+  text-align: left;
+  margin-top: 20px; 
+  /* Add some space above the heading */
+}
+
+
+
+/* ----------------------animation------------------- */
+@keyframes navanima {
+  0%{
+      background-color: rgb(0, 0, 0, 0.0);
+  }
+  10%{
+      background-color: rgba(0, 0, 0, 0.8);
+  }
+  20%,100%{
+
+      background: #000;
+  }
+
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+               <a href="/home">Block<span>Stash</span></a> 
+            </div>
+             <ul class="nav-links">
+                 
+            <li > <a href="/home/Company">Company</a></li>
+            <li ><a href="#news">News</a></li>
+            <li ><a href="/login">CryptoCurrency</a></li>
+            
+            </ul>
+            <div class="create-btn"><a href="#create">Get Block 
+              </a>
+             
+            </div>
+        </nav>
+    </header>
+    <main>
+      <div class="main-container">
+        <h1>News</h1>
+        <div class="contents">
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
+  {
+  "feedMode": "market",
+  "market": "crypto",
+  "isTransparent": true,
+  "displayMode": "regular",
+  "width": "100%",
+  "height": "1000",
+  "colorTheme": "dark",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+          </div>
+        </div>
+       
+      </div>
+    </main>
+    <script>
+       document.querySelectorAll('header nav .nav-links a').forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const href = link.getAttribute('href'); // use 'link', not 'event.target'
+    
+    if (!href) {
+      console.error('No href found on link');
+      return;
+    }
+
+    fetch(href, {
+      method: 'GET',
+      redirect: 'follow',
+    })
+      .then((response) => {
+        if (response.ok) {
+          window.location.href = href;
+        } else {
+          console.error('Failed to fetch the signup page');
+        }
+      })
+      .catch((err) => {
+        console.error('Error:', err);
+      });
+  });
+});
+
+    </script>
+</body>
+</html>
